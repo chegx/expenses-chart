@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Expenses chart component | Frontend Mentor</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main>
+    <div class="balance-box">
+      <div>
+        <p class="balance-text">My balance</p>
+        <p class="balance">$921.48</p>
+      </div>
+      <img class="logo" src="images/logo.svg" alt="" aria-hidden="true">
+    </div>
+    <div class="spending-box">
+      <h1 class="heading">Spending - Last 7 days</h1>
+      <canvas id="myChart"></canvas>
+      <hr>
+      <div class="total-box">
+        <div>
+          <p class="total-text">Total this week</p>
+          <p class="total">$<span id="total"></span></p>
+        </div>
+        <div class="change-box">
+          <p class="change">+2.4%</p>
+          <p class="change-text">from last week</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.0/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

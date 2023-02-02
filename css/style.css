@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+}
+
+main {
+    width: 93%;
+    max-width: 40rem;
+    margin: 5rem 0;
+}
+
+hr {
+    background-color: var(--cream);
+    border: none;
+    height: 0.2rem;
+    margin: 1.8rem 0 2.7rem;
+}
+
+.balance-box {
+    border-radius: 1rem;
+    background-color: var(--soft-red);
+    color: var(--very-pale-orange);
+    margin-bottom: 1.5rem;
+    padding: 2.5rem 2.5rem 2.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balance-text {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.balance {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.logo {
+    width: 6rem;
+}
+
+.spending-box {
+    background-color: var(--very-pale-orange);
+    border-radius: 1rem;
+    padding: 3rem 2rem 2.5rem;
+}
+
+.heading {
+    color: var(--dark-brown);
+    font-size: 2.4rem;
+    margin-bottom: 4rem;
+}
+
+.total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.total-text {
+    color: var(--medium-brown);
+    font-size: 1.5rem;
+    margin-bottom: 1.3rem;
+}
+
+.total {
+    color: var(--dark-brown);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.change-box {
+    text-align: right;
+}
+
+.change {
+    color: var(--dark-brown);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.change-text {
+    color: var(--medium-brown);
+    font-size: 1.5rem;
+}
+
+/* === LARGE SCREEN === */
+@media (min-width: 820px) {
+    main {
+        max-width: 54rem;
+    }
+
+    hr {
+        margin: 2.5rem 0 3.7rem;
+    }
+
+    .balance-box {
+        border-radius: 1.8rem;
+        margin-bottom: 2.5rem;
+        padding: 3rem 4rem 3rem 3rem;
+    }
+
+    .balance-text {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .balance {
+        font-size: 3.2rem;
+    }
+
+    .logo {
+        width: 7rem;
+    }
+
+    .spending-box {
+        border-radius: 1.8rem;
+        padding: 4rem;
+    }
+
+    .heading {
+        font-size: 3.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .total-text {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .total {
+        font-size: 4.9rem;
+    }
+
+    .change {
+        font-size: 1.8rem;
+    }
+
+    .change-text {
+        font-size: 1.8rem;
+    }
+}
