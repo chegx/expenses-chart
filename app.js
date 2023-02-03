@@ -3,10 +3,10 @@ async function getData() {
   const myData = await response.json();
 
   const xData = [];
-  const yData = []
+  const yData = [];
   const barColors = [];
   const hoverBarColors = [];
-  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const mediaQuery = window.matchMedia('(min-width: 820px)'); //for changing font size and caret padding
 
   for (let i = 0; i < 7; i++) {
@@ -34,7 +34,7 @@ async function getData() {
   var text = "";
   for (let i = 0; i < 7; i++) {
     sum += yData[i];
-    text += weekday[i] + " $" + yData[i] + " ";
+    text += weekdays[i] + " $" + yData[i] + " ";
   }
   document.getElementById("total").textContent = "$" + sum.toFixed(2);
   document.getElementById("chartText").textContent = text;
