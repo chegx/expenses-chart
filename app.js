@@ -6,6 +6,7 @@ async function getData() {
   const yData = []
   const barColors = [];
   const hoverBarColors = [];
+  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const mediaQuery = window.matchMedia('(min-width: 820px)'); //for changing font size and caret padding
 
   for (let i = 0; i < 7; i++) {
@@ -28,11 +29,15 @@ async function getData() {
   hoverBarColors[maxIndex] = "hsla(186, 34%, 60%, 0.7)";
 
   //get the sum of all values and show it in the total
+  //add text with data for screen readers
   var sum = 0;
+  var text = "";
   for (let i = 0; i < 7; i++) {
     sum += yData[i];
+    text += weekday[i] + " $" + yData[i] + " ";
   }
-  document.getElementById("total").textContent = sum;
+  document.getElementById("total").textContent = "$" + sum.toFixed(2);
+  document.getElementById("chartText").textContent = text;
 
   //set defalt properties
   Chart.defaults.borderColor = 'transparent'; //remove bottom line
