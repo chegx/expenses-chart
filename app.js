@@ -6,7 +6,7 @@ async function getData() {
   const yData = [];
   const barColors = [];
   const hoverBarColors = [];
-  const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  const weekday = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const mediaQuery = window.matchMedia('(min-width: 820px)'); //for changing font size and caret padding
 
   for (let i = 0; i < 7; i++) {
@@ -16,17 +16,13 @@ async function getData() {
     hoverBarColors.push("hsla(10, 79%, 65%, 0.7)"); //color on hover every bar transparent red
   }
 
-  //search for the maximum value and color its bar cyan
-  var maxValue = 0;
-  var maxIndex = 0;
-  for (let i = 0; i < 7; i++) {
-    if (myData[i].amount > maxValue) {
-      maxValue = myData[i].amount;
-      maxIndex = i;
-    }
-  }
-  barColors[maxIndex] = "hsl(186, 34%, 60%)";
-  hoverBarColors[maxIndex] = "hsla(186, 34%, 60%, 0.7)";
+  //get the current day and convert it so the week starts on Monday  
+  const currentDate = new Date();
+  const currentDay = currentDate.getDay();
+  const todayIndex = (currentDay + 6) % 7;
+
+  barColors[todayIndex] = "hsl(186, 34%, 60%)";
+  hoverBarColors[todayIndex] = "hsla(186, 34%, 60%, 0.7)";
 
   //get the sum of all values and show it in the total
   //add text with data for screen readers
@@ -34,7 +30,7 @@ async function getData() {
   var text = "";
   for (let i = 0; i < 7; i++) {
     sum += yData[i];
-    text += weekdays[i] + " $" + yData[i] + " ";
+    text += weekday[i] + " $" + yData[i] + " ";
   }
   document.getElementById("total").textContent = "$" + sum.toFixed(2);
   document.getElementById("chartText").textContent = text;
